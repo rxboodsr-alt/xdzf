@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(
+        135deg,
+        #ffd6d6,
+        #ffe4e1,
+        #ffd1dc
+    );
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    font-family:Comic Sans MS;
+    overflow:hidden;
+}
+
+h1{
+    color:#ff5c8a;
+    font-size:50px;
+}
+
+img{
+    width:300px;
+}
+
+button{
+    margin-top:25px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#ff7ea8;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.heart{
+    position:absolute;
+    color:pink;
+    animation:float 7s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}
+</style>
+
+</head>
+<body>
+
+<img src="kitten.gif">
+
+<h1>Хочешь сюрприз? 💖</h1>
+
+<button onclick="location.href='photos.html'">
+Кликай
+</button>
+
+<script>
+for(let i=0;i<30;i++){
+
+let h=document.createElement("div");
+
+h.innerHTML="❤";
+h.className="heart";
+
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(20+Math.random()*30)+"px";
+h.style.animationDuration=(4+Math.random()*6)+"s";
+
+document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
